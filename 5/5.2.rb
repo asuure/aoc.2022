@@ -1,6 +1,7 @@
 ar=[]
 arar=[]
-File.open("5.txt").take(9).each do |l|
+f=File.open("5.txt")
+f.take(9).each do |l|
     l.scan(/.{4}|.+/).each do |e|
         ar.push(e.delete("[] \n"))
     end
@@ -15,7 +16,7 @@ def t(ar,n,from,to)
     ar[to-1].concat(ta)
 end
 
-File.open("5.txt").drop(10).each do |l|
+f.drop(1).each do |l|
     j=l.split(/[\s]/).map(&:to_i)
     t(a,j[1],j[3],j[5])
 end
